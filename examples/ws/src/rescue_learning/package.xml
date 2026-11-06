@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rescue_learning</name><version>0.1.0</version>
+  <description>Independent Humble training nodes. No robot command publisher.</description>
+  <maintainer email="learner@example.com">ROS 2 Lab learner</maintainer><license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend><exec_depend>std_msgs</exec_depend>
+  <exec_depend>example_interfaces</exec_depend><exec_depend>launch</exec_depend><exec_depend>launch_ros</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

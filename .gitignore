@@ -1,0 +1,16 @@
+# Local state and hosting identity
+.git/
+.openai/
+.qa/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.log
+*.tar.gz
+*.zip
+!dist/ros2-learning-examples.zip
+examples/ws/build/
+examples/ws/install/
+examples/ws/log/
