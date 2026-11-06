@@ -7,20 +7,66 @@ GUI học ROS 2 từ dòng lệnh Linux đến lập trình và điều hướng
 - Terminal mô phỏng; tiến độ và ghi chú lưu trong trình duyệt, có xuất/nhập JSON.
 - Workspace ROS độc lập với 5 executable Python học tập.
 
-## Chạy giao diện
+## Chạy trên Ubuntu
 
-Không cần npm hoặc ROS để đọc bài. Có thể mở trực tiếp `dist/index.html` bằng trình duyệt.
+Không cần npm hoặc ROS để đọc giáo trình. Các bài thực hành ROS dùng **Ubuntu 22.04, Bash, ROS 2 Humble và Gazebo Fortress**.
 
-Với Python đã cài, chạy từ thư mục repository:
+### 1. Cài Git và Python 3
+
+Mở Terminal bằng **Ctrl + Alt + T**, rồi chạy:
+
+```bash
+sudo apt update
+sudo apt install git python3
+```
+
+### 2. Tải mã nguồn lần đầu
+
+```bash
+cd ~
+git clone https://github.com/duc2605/ROS2.git
+cd ~/ROS2
+```
+
+Nếu đã clone repo, bỏ qua bước clone và vào thư mục đã có. Các lệnh dưới giả định repo nằm ở `~/ROS2`; thay đường dẫn nếu bạn clone ở nơi khác.
+
+### 3. Mở giáo trình
+
+```bash
+cd ~/ROS2
+python3 -m http.server 8765 --bind 127.0.0.1 --directory dist
+```
+
+Giữ terminal này mở. Mở trình duyệt trên **cùng máy Ubuntu**, truy cập [http://127.0.0.1:8765/](http://127.0.0.1:8765/) và chọn **Bắt đầu từ bài 01**.
+
+- **Lộ trình học:** chọn bài bất kỳ.
+- **Terminal thực hành:** luyện các lệnh với dữ liệu mô phỏng.
+- **Dự án của bạn:** xem cấu trúc và luồng dữ liệu của `three-robot-rescue`.
+- **Ctrl + C** trong terminal chạy máy chủ: tắt máy chủ giáo trình.
+
+### Những lần mở sau
+
+```bash
+cd ~/ROS2
+python3 -m http.server 8765 --bind 127.0.0.1 --directory dist
+```
+
+Sau đó mở lại [http://127.0.0.1:8765/](http://127.0.0.1:8765/). Nếu báo không kết nối được, kiểm tra máy chủ đã chạy và terminal chưa bị đóng. Nếu cổng 8765 đang bận, dùng cổng khác, ví dụ `8766`, và mở `http://127.0.0.1:8766/`.
+
+Tiến độ/ghi chú lưu theo trình duyệt và địa chỉ truy cập; đổi cổng hoặc đổi máy có thể không thấy dữ liệu cũ. Hãy xuất bản sao JSON trong mục **Ghi chép của tôi** trước khi chuyển.
+
+## Chạy trên Windows
+
+Với Python đã cài, mở terminal tại thư mục repository rồi chạy:
 
 ```bash
 python -m http.server 8765 --bind 127.0.0.1 --directory dist
 ```
 
 Mở http://127.0.0.1:8765/ và chọn **Bắt đầu từ bài 01**.
-Trên Windows có thể nhấp đúp `MO-GIAO-TRINH.cmd`; nó khởi động máy chủ local nếu cần rồi mở trình duyệt. Máy chủ chỉ lắng nghe trên 127.0.0.1.
+Hoặc nhấp đúp `MO-GIAO-TRINH.cmd`; nó khởi động máy chủ local nếu cần rồi mở trình duyệt. Tệp `.cmd` chỉ dành cho Windows. Máy chủ chỉ lắng nghe trên 127.0.0.1.
 
-Các ví dụ thực hành thật dùng **Ubuntu 22.04, Bash, ROS 2 Humble và Gazebo Fortress**. Terminal trong website chỉ mô phỏng, không chạy shell thật hoặc điều khiển robot.
+Cũng có thể mở trực tiếp `dist/index.html` để đọc bài mà không chạy máy chủ. Terminal trong website chỉ mô phỏng, không chạy shell thật hoặc điều khiển robot. Khi đến phần thực hành ROS, làm theo bài cài Humble trong giáo trình.
 
 ## Cấu trúc
 
